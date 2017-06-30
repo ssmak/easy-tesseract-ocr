@@ -4,7 +4,7 @@
   "description": "This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++). ",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/test1.js && node ./test/test2.js && node ./test/test3.js && node ./test/test4.js"
+    "test": "node ./test/test1.js && node ./test/test2.js && node ./test/test3.js && node ./test/test4.js && node ./test/test5.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/ssmak/easy-tesseract-ocr#readme",
   "dependencies": {
-    "child-process-promise": "^2.2.1"
+    "child-process-promise": "^2.2.1",
+    "jimp": "^0.2.28",
+    "robotjs": "^0.4.7",
+    "sleep": "^5.1.1"
   }
 }
