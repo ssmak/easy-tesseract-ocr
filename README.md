@@ -12,7 +12,7 @@ I have packed with the Traditional Chinese trained data.
 ## command line test
 Please make sure the Tesseract OCR engine can be called from command/unix cli.<br />
 Window:<br />
-\>tesseract -v<br />
+\\>tesseract -v<br />
 (*the version number will be printed if Tesseract is set up correctly. If none of this, please make sure you have added the installation path to the PATH environment variable. Almost the default path should be C:\Program Files (x86)\Tesseract-OCR)
 
 ## usage on Node
