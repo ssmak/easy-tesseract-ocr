@@ -22,8 +22,7 @@ npm install easy-tesseract-ocr --save
 ```javascript
 const eto = require('easy-tesseract-ocr');
 
-console.log("\n-- test case 1: basic ocr scanning (english), eng-sample.png --");
-eto.scan('./test/eng-sample.png')
+eto.scan('./eng-sample.png')
 	.then(function (text) {
 		console.log('result: ', text);
 	})
