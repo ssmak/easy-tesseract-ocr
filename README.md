@@ -24,11 +24,11 @@ npm install easy-tesseract-ocr --save
 
 -- index.js
 ```javascript
-const eto = require('./../index.js');
+const eto = require('easy-tesseract-ocr');
 
 console.log("\n-- test case 1: basic OCR scanning (english), eng-sample.png --");
 eto.scan({
-	imagePath: './test/eng-sample.png',
+	imagePath: './eng-sample.png',
 	trainedData: 'eng'
 })
 .then(function (text) {
@@ -36,6 +36,5 @@ eto.scan({
 })
 .catch(function (err) {
 	console.error(err);
-});
-	
+});	
 ```	
