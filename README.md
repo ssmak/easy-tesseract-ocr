@@ -1,6 +1,10 @@
 # easy-tesseract-ocr
 This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++).
 
+## features
+1) OCR on static image (result in text or the value of probability)
+2) OCR on screen with specified region (result in text or the value of probability)
+
 ## prerequisite
 Download and Install the Tesseract OCR Engine:<br />
 For more details, please refer to Github: https://github.com/tesseract-ocr/tesseract<br />
@@ -15,18 +19,23 @@ Window:<br />
 \\>tesseract -v<br />
 (*the version number will be printed if Tesseract is set up correctly. If none of this, please make sure you have added the installation path to the PATH environment variable. Almost the default path should be C:\Program Files (x86)\Tesseract-OCR)
 
-## usage on Node
+## usage on Node (please refer to the /test/test[1-5].js for detailed usage)
 npm install easy-tesseract-ocr --save
 
 -- index.js
 ```javascript
-const eto = require('easy-tesseract-ocr');
+const eto = require('./../index.js');
 
-eto.scan('./eng-sample.png')
-	.then(function (text) {
-		console.log('result: ', text);
-	})
-	.catch(function (err) {
-		console.error(err);
-	});
+console.log("\n-- test case 1: basic OCR scanning (english), eng-sample.png --");
+eto.scan({
+	imagePath: './test/eng-sample.png',
+	trainedData: 'eng'
+})
+.then(function (text) {
+	console.log('[result]\n', text);
+})
+.catch(function (err) {
+	console.error(err);
+});
+	
 ```	
