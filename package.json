@@ -1,6 +1,6 @@
 {
   "name": "easy-tesseract-ocr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++). ",
   "main": "index.js",
   "scripts": {
