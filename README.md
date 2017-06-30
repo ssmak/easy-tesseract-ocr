@@ -3,7 +3,11 @@ This is a tiny OCR project and just provide a caller method to interact with Tes
 
 ## prerequisite
 Download and Install the Tesseract OCR Engine:
+
+
 For more details, please refer to Github: https://github.com/tesseract-ocr/tesseract
+
+
 Windows binary(3-parties) and Trained data: https://sourceforge.net/projects/tesseract-ocr-alt/files/
 
 For Windows user, you can install Tesseract OCR engine from this projecct directory(test/tesseract-3.02.02-chi_traineddata.7z)
@@ -11,14 +15,18 @@ I have packed with the Traditional Chinese trained data.
 
 ## command line test
 Please make sure the Tesseract OCR engine can be called from command/unix cli.
+
 Window:
+
 \>tesseract -v
+
 (*the version number will be printed if Tesseract is set up correctly. If none of this, please make sure you have added the installation path to the PATH environment variable. Almost the default path should be C:\Program Files (x86)\Tesseract-OCR)
 
 ## usage on Node
 npm install easy-tesseract-ocr --save
 
 -- index.js
+```javascript
 const eto = require('easy-tesseract-ocr');
 
 console.log("\n-- test case 1: basic ocr scanning (english), eng-sample.png --");
@@ -29,4 +37,4 @@ eto.scan('./test/eng-sample.png')
 	.catch(function (err) {
 		console.error(err);
 	});
-	
+```	
