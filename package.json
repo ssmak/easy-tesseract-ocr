@@ -1,0 +1,31 @@
+{
+  "name": "easy-tesseract-ocr",
+  "version": "1.0.0",
+  "description": "This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++). ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test1.js && node ./test/test2.js && node ./test/test3.js && node ./test/test4.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssmak/easy-tesseract-ocr.git"
+  },
+  "keywords": [
+    "tesseract",
+    "ocr",
+    "win32",
+    "windows",
+    "open",
+    "source",
+    "free"
+  ],
+  "author": "ssmak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssmak/easy-tesseract-ocr/issues"
+  },
+  "homepage": "https://github.com/ssmak/easy-tesseract-ocr#readme",
+  "dependencies": {
+    "child-process-promise": "^2.2.1"
+  }
+}
