@@ -49,20 +49,28 @@ var easyTesseractOCR = {
 	scan: function (params) {
 		let imagePath = params.imagePath ? params.imagePath : null;
 		let compare = params.compare ? params.compare : null;
-		let trainedData = params.trainedData ? params.trainedData : 'chi_tra';		
+		let trainedData = params.trainedData ? params.trainedData : 'chi_tra';
+		let reservedSample = params.reservedSample ? params.reservedSample : false;
 
 		//check ocr progress type
 		if(typeof(imagePath) === 'object') {
 			//live screen ocr
 			return new Promise((resolve, reject) => {
 				try {
-					let screenshot = robot.screen.capture(imagePath.x, imagePath.y, imagePath.width, imagePath.height);
+					let screenshot = null;
+					console.log(imagePath);
+					if('x' in imagePath && 'y' in imagePath && 'width' in imagePath && 'height' in imagePath) {
+						screenshot = robot.screen.capture(imagePath.x, imagePath.y, imagePath.width, imagePath.height);
+					}
+					if('x1' in imagePath && 'y1' in imagePath && 'x2' in imagePath && 'y2' in imagePath) {
+						screenshot = robot.screen.capture(imagePath.x1, imagePath.y1, imagePath.x2 - imagePath.x1, imagePath.y2 - imagePath.y1);
+					}
 					new jimp(screenshot.width, screenshot.height, function (err, img) {
 						img.bitmap.data = screenshot.image;
 						//img.greyscale();
-						//img.contrast(0.25);
 						//img.invert();
 						img.scale(2);
+						//img.contrast(0.25);						
 						img.write('./eto.tmp.jpg');
 						
 						easyTesseractOCR.getStaticOCRPromise({
@@ -72,7 +80,9 @@ var easyTesseractOCR = {
 						})
 						.then(function (result) {
 							resolve(result);
-							fs.unlink('./eto.tmp.jpg');
+							if(!reservedSample) {
+								fs.unlink('./eto.tmp.jpg');
+							}
 						})
 						.catch(function (err) {
 							reject(err);

@@ -8,8 +8,9 @@ eto.scan({
 		width: 500, 
 		height: 100
 	},
-	//compare: "證劵",
-	//trainedData: "chi_tra"
+	//compare: "測試",
+	trainedData: "chi_tra",
+	reservedSample: false
 })
 .then(function (text) {
 	console.log("[result]\n", text);
