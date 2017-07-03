@@ -3,10 +3,10 @@ const eto = require('./../index.js');
 console.log("\n-- test case 5: live OCR at specified location(rectangle) (chinese) --")
 eto.scan({
 	imagePath: {
-		x: 0,
-		y: 200, 
-		width: 500, 
-		height: 100
+		x: 65,
+		y: 134, 
+		width: 369, 
+		height: 234
 	},
 	//compare: "測試",
 	trainedData: "chi_tra",
