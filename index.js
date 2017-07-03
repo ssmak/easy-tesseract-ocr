@@ -58,7 +58,6 @@ var easyTesseractOCR = {
 			return new Promise((resolve, reject) => {
 				try {
 					let screenshot = null;
-					console.log(imagePath);
 					if('x' in imagePath && 'y' in imagePath && 'width' in imagePath && 'height' in imagePath) {
 						screenshot = robot.screen.capture(imagePath.x, imagePath.y, imagePath.width, imagePath.height);
 					}
