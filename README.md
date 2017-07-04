@@ -1,5 +1,7 @@
 # easy-tesseract-ocr
-This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++).
+This is a tiny OCR project and just provide a caller method to interact with Tesseract (Which is a known open source OCR library project written in C++).<br />
+
+<a href="https://nodei.co/npm/easy-tesseract-ocr/"><img src="https://nodei.co/npm/easy-tesseract-ocr.png"></a>
 
 ## features
 1) OCR on static image (result in text or the value of probability)
